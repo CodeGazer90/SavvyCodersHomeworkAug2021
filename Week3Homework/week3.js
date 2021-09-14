@@ -40,26 +40,41 @@ function greetCustomer() {
 }
 greetCustomer();
 // ----------------------------------------------------------------
+let pizzaOrder = [];
 
-function getPizzaOrder(size, crust, ...topping) {
-  console.log(`One large thick crust pizza with ${pizzaToppings} coming up!`);
+function getPizzaOrder(size, crust, ...toppings) {
+  console.log(`One ${size} ${crust} crust pizza with ${toppings} coming up!`);
+  pizzaOrder.push(size, crust, [...toppings]);
+  return pizzaOrder;
 }
-getPizzaOrder();
+getPizzaOrder("Medium", "Thin", "Basil", "Sausage");
 
 // -------------------------------------------------------------------
-let ingredients = ["medium", "thin", "basil"];
-let pizza = { size: "medium", crust: "thin", toppings: "basil" };
+// let ingredients = ["medium", "thin", "basil"];
+let pizza = {};
 
-function preparePizza(ingredients) {
+function preparePizza(list) {
   console.log("...Cooking pizza...");
-  console.log(pizza);
+  pizza.size = list[0];
+  pizza.crust = list[1];
+  pizza.toppings = list[2];
+
+  return pizza;
 }
-preparePizza();
+preparePizza(pizzaOrder);
 
 // ----------------------------------------------------------------------
-function servePizza() {
-  console.log("Order up! Here's your medium, thin crust pizza with ");
-  console.log(pizza);
+// let pizza = {
+//   size: "medium",
+//   crust: "thin",
+//   toppings: ["basil", "sausage"]
+// };
+function servePizza(pizza) {
+  console.log(
+    `Order up! Here's your ${size} ${crust} crust pizza with ${toppings}. Enjoy!`
+  );
+  pizza.push(size, crust, [...toppings]);
+  return pizza;
 }
 
 servePizza();
