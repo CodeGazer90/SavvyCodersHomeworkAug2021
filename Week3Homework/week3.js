@@ -64,9 +64,17 @@ function preparePizza(list) {
 preparePizza(pizzaOrder);
 
 // ----------------------------------------------------------------------
-function servePizza() {
-  console.log("Order up! Here's your medium, thin crust pizza with ");
-  console.log(pizza);
+// let pizza = {
+//   size: "medium",
+//   crust: "thin",
+//   toppings: ["basil", "sausage"]
+// };
+function servePizza(pizza) {
+  console.log(
+    `Order up! Here's your ${size} ${crust} crust pizza with ${toppings}. Enjoy!`
+  );
+  pizza.push(size, crust, [...toppings]);
+  return pizza;
 }
 
 servePizza();
