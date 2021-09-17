@@ -38,7 +38,7 @@ function greetCustomer() {
   }
   console.log(greeting);
 }
-greetCustomer();
+// greetCustomer();
 // ----------------------------------------------------------------
 let pizzaOrder = [];
 
@@ -47,7 +47,7 @@ function getPizzaOrder(size, crust, ...toppings) {
   pizzaOrder.push(size, crust, [...toppings]);
   return pizzaOrder;
 }
-getPizzaOrder("Medium", "Thin", "Basil", "Sausage");
+// getPizzaOrder("Medium", "Thin", "Basil", "Sausage");
 
 // -------------------------------------------------------------------
 // let ingredients = ["medium", "thin", "basil"];
@@ -61,7 +61,7 @@ function preparePizza(list) {
 
   return pizza;
 }
-preparePizza(pizzaOrder);
+// preparePizza(pizzaOrder);
 
 // ----------------------------------------------------------------------
 // let pizza = {
@@ -71,10 +71,11 @@ preparePizza(pizzaOrder);
 // };
 function servePizza(pizza) {
   console.log(
-    `Order up! Here's your ${size} ${crust} crust pizza with ${toppings}. Enjoy!`
+    `Order up! Here's your ${pizza.size} ${pizza.crust} crust pizza with ${pizza.toppings}. Enjoy!`
   );
-  pizza.push(size, crust, [...toppings]);
   return pizza;
 }
-
-servePizza();
+greetCustomer();
+getPizzaOrder("Medium", "Thin", "Basil", "Sausage");
+preparePizza(pizzaOrder);
+servePizza(pizza);
